@@ -20,7 +20,7 @@ RUN curl https://raw.githubusercontent.com/boris-burgos/aws-security-group-ingre
 RUN chmod +x /app/update.sh
 
 # copy crontabs for root user
-RUN echo -en "\n* * * * * /app/update.sh\n\n" >> /etc/crontabs/root
+RUN echo -en "\n*/5 * * * * /app/update.sh\n\n" >> /etc/crontabs/root
 
 # start crond with log level 8 in foreground, output to stderr
 CMD ["crond", "-f", "-d", "8"]
