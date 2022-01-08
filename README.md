@@ -1,10 +1,11 @@
 # IP Update
 
-## Build
- 
-docker build -t sg-update --build-arg aws_access_key_id=KEY --build-arg aws_secret_access_key=SECRECT --build-arg aws_region=eu-west-1 .
+## Enviroment variables needed
 
-## Run
-
-docker run  -e RULE_DESCRIPTION=DESC -e DDNS_HOST=me.duckdns.org sg-update
+* AWS_ACCESS_KEY_ID: aws access key
+* AWS_SECRET_ACCESS_KEY: aws access secret
+* AWS_DEFAULT_REGION: aws region
+* RULE_DESCRIPTION: description added to automatically created rules
+* DDNS_HOST: host to be use to determine the IP to be added to aws sg
+* SECURITY_GROUP_NAME: name of the aws security group to be updated
 
