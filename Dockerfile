@@ -1,8 +1,9 @@
 FROM python:3.6-alpine
 
 RUN pip3 --no-cache-dir install --upgrade awscli
-RUN apk --no-cache add curl
+RUN apk add --no-cache curl
 RUN apk add --no-cache bash
+RUN apk add --no-cache bind-tools
 
 # set the working directory
 RUN ["mkdir", "app"]
